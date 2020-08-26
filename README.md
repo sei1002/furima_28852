@@ -14,50 +14,53 @@
 
 ### Association
 - has_many:items
-- has_one:credit_cards
+- has_one:purchase
 
 ##Itemsテーブル
 
 | Colum       | Type       | Options            |
 | ----------- | ---------- | ------------------ |
 | name        | string     | null:false         |
-| category    | string     |                    |
+| category    | integer    | null:false         |
 | price       | integer    | null:false         |
 | description | string     | null:false         |
-| condition   | string     | null:false         |
-| delv_fee    | string     | null:false         |
-| delv_time   | string     | null:false         |
-| from_area   | string     | null:false         |
+| condition   | integer     | null:false         |
+| delv_fee    | integer    | null:false         |
+| delv_time   | integer    | null:false         |
+| prefectures | integer    | null:false         |
 | image       | string     | null:false         |
 | user_id     | references | foreign_key: true  |
 
 ### Association
+- has_one:purchase
 - belongs_to :user
-
-## Credit_cardsテーブル
+- prefecturesはActive_hash使用
+- categoryはActive_hash使用
+- conditionはActive_hash使用
+- delv_feeはActive_hash使用
+- delv_timeはActive_hash使用
+## Purchaseテーブル
 
 | Colum       | Type       | Options            |
 | ----------- | ---------- | ------------------ |
-| card_number | integer    | null:false         |
-| security    | integer    | null:false         |
-| card_year   | integer    | null:false         |
-| card_month  | integer    | null:false         |
 | user_id     | references | foreign_key: true  |
-| address_id  | references | foreign_key: true  |
+| item_id     | references | foreign_key: true  |
 
 ### Association
-- has_one :address
 - belongs_to :user
+- belongs_to :item
+- has_one :address
 
 ## Addresses
 
 | Colum       | Type     | Options     |
 | ----------- | -------- | ----------- |
-| Prefectures | string   | null:false  |
+| Prefectures | integer  | null:false  |
 | city        | string   | null:false  |
 | address     | string   | null:false  |
 | room_number | string   |             |
 | Postal_code | string   | null:false  |
 
 ### Association
-- belongs_to :credit-card
+- belongs_to :purchase
+- prefecturesはActive_hash使用

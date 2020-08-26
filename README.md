@@ -1,24 +1,66 @@
-# README
+## Usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Colum   -- | Type       | Options     |  
+| ---------- | ---------- | ----------- |  
+| first_name | string     | null:false  |  
+| last_name  | string     | null:false  |  
+| furigana   | string     | null:false  |  
+| birthday   | date       | null:false  |  
+| nickname   | string     | null:false  |  
+| email      | string     | null:false  |  
+| password   | string     | null:false  |  
+| tel        | string     | null:false  |   
 
-Things you may want to cover:
+### Association
+- has_many:items
+- has_one:purchase
 
-* Ruby version
+##Itemsテーブル
 
-* System dependencies
+| Colum       | Type       | Options            |
+| ----------- | ---------- | ------------------ |
+| name        | string     | null:false         |
+| category    | integer    | null:false         |
+| price       | integer    | null:false         |
+| description | string     | null:false         |
+| condition   | integer     | null:false        |
+| delv_fee    | integer    | null:false         |
+| delv_time   | integer    | null:false         |
+| prefectures | integer    | null:false         |
+| image       | string     | null:false         |
+| user_id     | references | foreign_key: true  |
 
-* Configuration
+### Association
+- has_one:purchase
+- belongs_to :user
+- prefecturesはActive_hash使用
+- categoryはActive_hash使用
+- conditionはActive_hash使用
+- delv_feeはActive_hash使用
+- delv_timeはActive_hash使用
+## Purchaseテーブル
 
-* Database creation
+| Colum       | Type       | Options            |
+| ----------- | ---------- | ------------------ |
+| user_id     | references | foreign_key: true  |
+| item_id     | references | foreign_key: true  |
 
-* Database initialization
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one :address
 
-* How to run the test suite
+## Addresses
 
-* Services (job queues, cache servers, search engines, etc.)
+| Colum       | Type     | Options     |
+| ----------- | -------- | ----------- |
+| Prefectures | integer  | null:false  |
+| city        | string   | null:false  |
+| address     | string   | null:false  |
+| build_name  | string   |             |
+| room_number | string   |             |
+| Postal_code | string   | null:false  |
 
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :purchase
+- prefecturesはActive_hash使用

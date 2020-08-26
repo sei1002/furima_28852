@@ -9,8 +9,7 @@
 | nickname   | string     | null:false  |  
 | email      | string     | null:false  |  
 | password   | string     | null:false  |  
-| tel        | integer    | null:false  |  
-| credit     | references |             |  
+| tel        | string     | null:false  |   
 
 ### Association
 - has_many:items
@@ -24,7 +23,7 @@
 | category    | integer    | null:false         |
 | price       | integer    | null:false         |
 | description | string     | null:false         |
-| condition   | integer     | null:false         |
+| condition   | integer     | null:false        |
 | delv_fee    | integer    | null:false         |
 | delv_time   | integer    | null:false         |
 | prefectures | integer    | null:false         |
@@ -58,6 +57,7 @@
 | Prefectures | integer  | null:false  |
 | city        | string   | null:false  |
 | address     | string   | null:false  |
+| build_name  | string   |             |
 | room_number | string   |             |
 | Postal_code | string   | null:false  |
 

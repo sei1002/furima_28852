@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # validates :first_name, :last_name, :kana_first, :kana_last, :birthday, :nickname, presence: true
 end

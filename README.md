@@ -4,12 +4,13 @@
 | ---------- | ---------- | ----------- |  
 | first_name | string     | null:false  |  
 | last_name  | string     | null:false  |  
-| furigana   | string     | null:false  |  
+| kana_first | string     | null:false  |  
+| kana_last  | string     | null:false  |  
 | birthday   | date       | null:false  |  
 | nickname   | string     | null:false  |  
 | email      | string     | null:false  |  
 | password   | string     | null:false  |  
-| tel        | string     | null:false  |   
+   
 
 ### Association
 - has_many:items

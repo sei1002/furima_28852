@@ -24,11 +24,10 @@
 | category    | integer    | null:false         |
 | price       | integer    | null:false         |
 | description | string     | null:false         |
-| condition   | integer     | null:false        |
+| condition   | integer    | null:false         |
 | delv_fee    | integer    | null:false         |
 | delv_time   | integer    | null:false         |
 | prefectures | integer    | null:false         |
-| image       | string     | null:false         |
 | user_id     | references | foreign_key: true  |
 
 ### Association

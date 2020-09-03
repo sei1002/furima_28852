@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       @user = FactoryBot.build(:user)
     end
 
-    it '全て記入されていればOK' do
+    it '全て存在していればOK' do
       expect(@user).to be_valid
     end
 

@@ -10,6 +10,6 @@ class Item < ApplicationRecord
 
   validates :name, :price, :description, :image, :category_id, :condition_id, :delv_fee_id, :delv_time_id, :prefecture_id, presence: true
   validates :category_id, :condition_id, :delv_fee_id, :delv_time_id, :prefecture_id, numericality: { other_than: 0 }
-  validates :price, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
+  validates :price, format: { with: /[0-9]+\d/, message: 'Half-width number' }
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: ' Out of setting range'}
 end

@@ -13,8 +13,8 @@
    
 
 ### Association
-- has_many:items
-- has_one:order
+- has_many :items
+- has_one :order
 
 ##　Itemsテーブル
 
@@ -31,7 +31,7 @@
 | user_id     | references | foreign_key: true  |
 
 ### Association
-- has_one:purchase
+- has_one :order
 - belongs_to :user
 - prefecturesはActive_hash使用
 - categoryはActive_hash使用

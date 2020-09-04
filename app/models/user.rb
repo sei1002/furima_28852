@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_one :order
 
   validates :first_name, :last_name, :kana_first, :kana_last, :birthday, :nickname, presence: true
   validates :password, format: { with: /(?=.*\d+.*)(?=.*[a-zA-Z]+.*)./, message: ' Include both letters and numbers' }

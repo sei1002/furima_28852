@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   has_one_attached :image
   belongs_to :user
+  has_one :order
 
   validates :name, :price, :description, :image, :category_id, :condition_id, :delv_fee_id, :delv_time_id, :prefecture_id, presence: true
   validates :category_id, :condition_id, :delv_fee_id, :delv_time_id, :prefecture_id, numericality: { other_than: 0 }

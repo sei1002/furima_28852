@@ -16,7 +16,7 @@
 - has_many :items
 - has_one :order
 
-##　Itemsテーブル
+## Itemsテーブル
 
 | Colum       | Type       | Options            |
 | ----------- | ---------- | ------------------ |
@@ -27,7 +27,7 @@
 | condition   | integer    | null:false         |
 | delv_fee    | integer    | null:false         |
 | delv_time   | integer    | null:false         |
-| prefectures | integer    | null:false         |
+| prefecture  | integer    | null:false         |
 | user_id     | references | foreign_key: true  |
 
 ### Association
@@ -55,11 +55,11 @@
 
 | Colum       | Type     | Options     |
 | ----------- | -------- | ----------- |
-| Prefectures | integer  | null:false  |
+| prefecture  | integer  | null:false  |
 | city        | string   | null:false  |
 | address     | string   | null:false  |
 | build_name  | string   |             |
-| Postal_code | string   | null:false  |
+| postal_code | string   | null:false  |
 | tel         | integer  | null:false  |
 
 ### Association

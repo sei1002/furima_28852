@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       redirect_to user_session_path
     end
 
-    redirect_to root_path if （user_signed_in? && current_user.id == @item.user_id) || (@item.order)
+    redirect_to root_path if (user_signed_in? && current_user.id == @item.user_id) || @item.order
 
   end
 

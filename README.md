@@ -13,10 +13,10 @@
    
 
 ### Association
-- has_many:items
-- has_one:purchase
+- has_many :items
+- has_one :order
 
-##Itemsテーブル
+## Itemsテーブル
 
 | Colum       | Type       | Options            |
 | ----------- | ---------- | ------------------ |
@@ -27,18 +27,19 @@
 | condition   | integer    | null:false         |
 | delv_fee    | integer    | null:false         |
 | delv_time   | integer    | null:false         |
-| prefectures | integer    | null:false         |
+| prefecture  | integer    | null:false         |
 | user_id     | references | foreign_key: true  |
 
 ### Association
-- has_one:purchase
+- has_one :order
 - belongs_to :user
 - prefecturesはActive_hash使用
 - categoryはActive_hash使用
 - conditionはActive_hash使用
 - delv_feeはActive_hash使用
 - delv_timeはActive_hash使用
-## Purchaseテーブル
+
+## Ordersテーブル
 
 | Colum       | Type       | Options            |
 | ----------- | ---------- | ------------------ |
@@ -50,17 +51,17 @@
 - belongs_to :item
 - has_one :address
 
-## Addresses
+## Addressesテーブル
 
 | Colum       | Type     | Options     |
 | ----------- | -------- | ----------- |
-| Prefectures | integer  | null:false  |
+| prefecture  | integer  | null:false  |
 | city        | string   | null:false  |
 | address     | string   | null:false  |
 | build_name  | string   |             |
-| room_number | string   |             |
-| Postal_code | string   | null:false  |
+| postal_code | string   | null:false  |
+| tel         | string   | null:false  |
 
 ### Association
-- belongs_to :purchase
+- belongs_to :order
 - prefecturesはActive_hash使用

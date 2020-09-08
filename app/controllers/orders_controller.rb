@@ -10,7 +10,11 @@ class OrdersController < ApplicationController
       redirect_to user_session_path
     end
 
-    if user_signed_in? && current_user.id == @item.user_id
+    if user_signed_in? && current_user.id == @item.user_id 
+      redirect_to root_path
+    end
+
+    if @item.order
       redirect_to root_path
     end
     

@@ -60,7 +60,7 @@
 | address     | string   | null:false  |
 | build_name  | string   |             |
 | postal_code | string   | null:false  |
-| tel         | integer  | null:false  |
+| tel         | string   | null:false  |
 
 ### Association
 - belongs_to :order
